@@ -1,0 +1,57 @@
+<div>
+
+    <h1>Inside View movie list componeent</h1>
+
+    <button routerLink="add-movie" >Navigate to Add Movie</button>
+    <hr>
+    
+    <!-- To seacrh  -->
+    <div  >
+        <input type="text" [(ngModel)] = "search" placeholder="Search by title or director name" (input) = "filterMovies()">
+
+    </div>
+
+    <!-- To sort movie list -->
+
+    <div>
+        <label for="sortBy">Sort By: </label>
+        <select  id="sortBy" [(ngModel)] = "sortBy" (change) = "sortMovies()" >
+            <option value="title">Title</option>
+            <option value="director">Director</option>
+            <!-- <option value="year">Year</option> -->
+        </select>
+    </div>
+
+    <table>
+        <thead>
+
+            
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Director</th>
+                <th>Year</th>
+                <!-- <th>Actions</th> -->
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor = "let movie of filteredMoviesArray" >
+                <td> {{movie.id}}  </td>
+                <td> {{movie.title}} </td>
+                <td> {{movie.director}} </td>
+                <td> {{movie.year}} </td>
+
+                <!-- button for edit and delete -->
+                <button (click) = "deleteMovie(movie.id)" >Delete Movie</button>
+                <button (click) = "updateMovie(movie.id)" >Update Movie</button>
+
+            </tr>
+        </tbody>
+
+    </table>
+
+
+
+
+</div>

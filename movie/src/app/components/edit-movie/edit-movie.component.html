@@ -1,0 +1,40 @@
+<h2>Inside Edit Movie Component</h2>
+
+<div>
+
+    <form [formGroup] = "movieForm" (ngSubmit) = "onUpdate()" >
+        <!-- Title field -->
+
+        <div>
+            <label for="title">Title</label>
+            <input type="text" formControlName = "title" id="title">
+            <div *ngIf = "movieForm.get('title')?.touched && movieForm.get('title')?.invalid" >
+                Title is required
+            </div>
+        </div>
+
+        <!-- Director Field -->
+
+        <div>
+            <label for="director">Director</label>
+            <input type="text" formControlName = "director" id="director">
+            <div *ngIf="movieForm.get('director')?.touched && movieForm.get('director')?.invalid" >
+                Director is required
+            </div>
+        </div>
+
+        <!-- year field -->
+        <div>
+            <label for="year">Year</label>
+            <input type="number" formControlName = "year" id="year">
+            <div *ngIf="movieForm.get('year')?.touched && movieForm.get('year')?.invalid" >
+                Year is requred
+            </div>
+        </div>
+
+
+        <button type="submit"  > Edit Movie Form </button>
+    </form>
+
+
+</div>

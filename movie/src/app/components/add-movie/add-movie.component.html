@@ -1,0 +1,46 @@
+<p>inside add-movie component</p>
+
+<div  >
+    <h2>Add Movie</h2>
+
+    <form [formGroup] = "movieForm" (ngSubmit) = "onAddMovie()" >
+
+        <div>
+
+            <label for="title">Title</label>
+            <input type="text" formControlName = "title" id="title">
+
+            <div *ngIf= "movieForm.get('title')?.touched && movieForm.get('title')?.invalid" >
+                Title is required.
+            </div>
+
+        </div>
+
+        <!--  -->
+
+        <div>
+            <label for="director">Director</label>
+            <input type="text" formControlName = "director" id="director">
+            <div *ngIf = "movieForm.get('director')?.touched && movieForm.get('director')?.invalid" >
+                Director is required.
+            </div>
+        </div>
+
+        <!--  -->
+
+        <div>
+            <label for="year">Year</label>
+            <input type="number" id="year" formControlName ='year'>
+            <div *ngIf = "movieForm.get('year')?.touched && movieForm.get('year')?.invalid">
+               <!-- <div *mgIf="movieForm.error?.required" -->
+                Year is requred.
+
+            </div>
+        </div>
+
+
+
+        <button type="submit" >Add Movie </button>
+
+    </form>
+</div>

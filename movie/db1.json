@@ -1,0 +1,22 @@
+{
+  "movies": [
+    {
+      "id": "1cf5",
+      "title": "movie 1",
+      "director": "d1",
+      "year": 2020
+    },
+    {
+      "id": "01f9",
+      "title": "queib",
+      "director": "c",
+      "year": 2000
+    },
+    {
+      "id": "07f8",
+      "title": "zack",
+      "director": "someone",
+      "year": 2005
+    }
+  ]
+}
